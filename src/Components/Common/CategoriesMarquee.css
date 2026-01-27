@@ -1,0 +1,49 @@
+.tv-marquee-container {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(90deg, #062758, #06217a);
+  padding: 10px 0;
+  border-radius: 16px;
+}
+
+/* Cinta */
+.tv-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: tvScroll 40s linear infinite;
+}
+
+/* Texto */
+.tv-marquee-item {
+  color: #e5e7eb;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0 1.75rem;
+  white-space: nowrap;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+/* Separador */
+.tv-marquee-item::after {
+  content: "•";
+  position: absolute;
+  right: -0.9rem;
+  color: #38bdf8;
+}
+
+/* Animación */
+@keyframes tvScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pausa al hover */
+.tv-marquee-container:hover .tv-marquee-track {
+  animation-play-state: paused;
+}
